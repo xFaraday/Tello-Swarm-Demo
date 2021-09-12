@@ -16,10 +16,11 @@ def call_swarm():
 		return assembly
 
 def connect_and_run(swarm):
+	swarm.connect()
 	print("performing health check routine")
 	for drone in swarm:
 		print("IP: " + str(drone) + " Battery: " + str(drone.get_battery()))
-	print("Taking off")
+	swarm.end()
 
 
 
